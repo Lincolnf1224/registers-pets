@@ -1,6 +1,21 @@
 
 print('ola \n')
 
+import pyodbc
+dados_conexao = (
+                 'driver={MySQL ODBC 8.0 ANSI Driver};'
+                'server=localhost:3306;'
+                'database=cadastro;'
+                'uid=root;'
+                'pwd=07112616LRAM#;'
+                'charset=utf8mb4;'
+ )
+
+conexao = pyodbc.connect(dados_conexao)
+
+print('conexao bem sucedida'
+      '\n')
+
 from time import sleep
 sleep(2)
 
