@@ -26,5 +26,15 @@ print('[h]elp para ajuda                |\n'
 
 pergunta = str(input('o que deseja fazer?'))
 
+if pergunta == 'h':
+    # nota : colocar tupla com mensagem de ajuda com os comandos futuramente
+    print('[h]elp para ajuda                |\n'
+      '[r]egister para um novo registro |\n'
+      '[v]iew para ver seus dados       |\n'
+      '[a]lter para alterar seus dados  |')
+
+#elif  pergunta == 'r':
+    #nome
+
 
 
