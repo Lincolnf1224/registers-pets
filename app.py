@@ -19,16 +19,16 @@ print('conexao bem sucedida'
 from time import sleep
 sleep(0)
 
-pergunta = str(input('o que deseja fazer?'))
+pergunta = str(input('o que deseja fazer?')).upper()
 
-if pergunta == 'h':
+if pergunta == 'H':
     # nota : colocar tupla com mensagem de ajuda com os comandos futuramente
     print('[h]elp para ajuda                |\n'
       '[r]egister para um novo registro |\n'
       '[v]iew para ver seus dados       |\n'
       '[a]lter para alterar seus dados  |')
 
-elif  pergunta == 'r':
+elif  pergunta == 'R':
     # nota : fazer uma classe que execute r , execute v e execute a
 
     especie = str(input('especie:')).upper()
@@ -39,6 +39,21 @@ elif  pergunta == 'r':
     cursor.execute(criar)
     cursor.commit()
     print('sucesso')
+
+elif pergunta == 'V':
+    nome = str(input('nome do pet:'))
+    ver = (f'''select * from pets
+           where nome = '{nome}'
+           order by nome''')
+    cursor.execute(ver)
+    dados =  cursor.fetchall()
+    list(dados)
+    print(20 * '-=')   
+    print(f'id:{dados[0][0]}\n'
+          f'nome:{dados[0][2]}\n'
+          f'especie:{dados[0][1]}\n'
+          f'sexo:{dados[0][3]}')
+    print(20 * '-=')
 
 #else temporario
 else:
