@@ -63,7 +63,9 @@ else:
     c = 'select * from pets'
     cursor.execute(c)
     resposta = cursor.fetchall()
-    print(resposta)
+    list(resposta)
+    for pos , r in enumerate(resposta):
+        print(resposta[pos])
     input('-')
 
 
