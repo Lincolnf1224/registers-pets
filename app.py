@@ -25,9 +25,7 @@ if pergunta == 'H':
     # nota : colocar tupla com mensagem de ajuda com os comandos futuramente
     print('[h]elp para ajuda                |\n'
       '[r]egister para um novo registro |\n'
-      '[v]iew para ver seus dados       |\n'
-      '-[a]lter para alterar seus dados |\n'
-      '-[d]elete para deletar um dados')
+      '[v]iew para ver seus dados       |\n')
     input('-')
 
 elif  pergunta == 'R':
@@ -38,6 +36,7 @@ elif  pergunta == 'R':
     criar = (f'''insert into pets (id , especie , nome , sexo) values(default ,'{especie}','{nome}', '{sexo}')''')
     cursor.execute(criar)
     cursor.commit()
+    sleep(1)
     print('sucesso')
     input('-')
 
@@ -47,6 +46,7 @@ elif pergunta == 'V':
            where nome = '{nome}'
            order by nome''')
     cursor.execute(ver)
+    sleep(1)
     resposta=  cursor.fetchall()
     list(resposta)
     dados = [resposta[0][0], resposta[0][2], resposta[0][1], resposta[0][3]]
@@ -68,6 +68,7 @@ elif pergunta == 'V':
                 atualizar = (f'''update pets set nome = '{novo_nome}' where id = {dados[0]} ''')
                 cursor.execute(atualizar)
                 cursor.commit()
+                sleep(1)
                 print('-atualizado-')
         elif direcionamento == 2:
             print(2)
