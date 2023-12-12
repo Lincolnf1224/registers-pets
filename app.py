@@ -1,6 +1,7 @@
 print('ola \n')
-
+print('\033[32m...conectando...\033[97m')
 import pyodbc
+from time import sleep
 dados_conexao = (
                  'driver={MySQL ODBC 8.0 ANSI Driver};'
                 'server=localhost:3306;'
@@ -12,11 +13,10 @@ dados_conexao = (
 
 conexao = pyodbc.connect(dados_conexao)
 cursor = conexao.cursor()
-
+sleep(1)
 print('conexao bem sucedida'
         '\n')
 
-from time import sleep
 sleep(0)
 
 while True:
@@ -26,7 +26,8 @@ while True:
         # nota : colocar tupla com mensagem de ajuda com os comandos futuramente
         print('[h]elp para ajuda                |\n'
         '[r]egister para um novo registro |\n'
-        '[v]iew para ver seus dados       |\n')
+        '[v]iew para ver seus dados       |\n'
+        '[S]air para fechar o programa    |\n')
         input('-')
 
     elif  pergunta == 'R':
@@ -91,6 +92,14 @@ while True:
 
         else:
            print('\n') 
+
+
+    elif pergunta == 'S':
+        print('Ate logo(^^)\n'
+              '\033[31m...fechando...\033[97m')
+        sleep(2)
+        break
+    
     #else temporario
     else:
         c = 'select * from pets'
@@ -100,7 +109,6 @@ while True:
         for pos , r in enumerate(resposta):
             print(resposta[pos])
         input()
-        break
 
 
 
