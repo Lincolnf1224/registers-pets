@@ -1,4 +1,3 @@
-print('ola \n')
 print('\033[32m...conectando...\033[97m')
 import pyodbc
 from time import sleep
@@ -18,6 +17,15 @@ print('conexao bem sucedida'
         '\n')
 
 sleep(1)
+
+print(15 * '-=')
+print(f'register Dogs')
+print(15 * '-=')
+
+print('\n[h]elp para ajuda                |\n'
+        '[r]egister para um novo registro |\n'
+        '[v]iew para ver seus dados       |\n'
+        '[S]air para fechar o programa    |\n')
 
 while True:
     pergunta = str(input('o que deseja fazer?\n:')).upper()
