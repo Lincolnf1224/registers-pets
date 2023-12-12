@@ -13,11 +13,11 @@ dados_conexao = (
 
 conexao = pyodbc.connect(dados_conexao)
 cursor = conexao.cursor()
-sleep(1)
+sleep(2)
 print('conexao bem sucedida'
         '\n')
 
-sleep(0)
+sleep(1)
 
 while True:
     pergunta = str(input('o que deseja fazer?\n:')).upper()
