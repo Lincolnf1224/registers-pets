@@ -1,6 +1,8 @@
-print('\033[32m...conectando...\033[97m')
 import pyodbc
 from time import sleep
+
+print('\033[32m...conectando...\033[97m')
+
 dados_conexao = (
                  'driver={MySQL ODBC 8.0 ANSI Driver};'
                 'server=localhost:3306;'
